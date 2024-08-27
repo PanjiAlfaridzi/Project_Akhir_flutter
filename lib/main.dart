@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:poyek_akhir/pages/bottomnav.dart';
 import 'package:poyek_akhir/pages/home.dart';
@@ -5,7 +6,9 @@ import 'package:poyek_akhir/pages/login.dart';
 import 'package:poyek_akhir/pages/onboard.dart';
 import 'package:poyek_akhir/pages/signup.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 

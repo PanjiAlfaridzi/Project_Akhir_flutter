@@ -42,13 +42,14 @@ class _OnboardState extends State<Onboard> {
                 },
                 itemBuilder: (_, i) {
                   return Padding(
-                      padding: EdgeInsets.all(20),
+                      padding:
+                          EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
                       child: Column(
                         children: [
                           Image.asset(
                             contents[i].image,
-                            height: 400,
-                            width: MediaQuery.of(context).size.width / 1.5,
+                            height: 450,
+                            width: MediaQuery.of(context).size.width,
                             fit: BoxFit.fill,
                           ),
                           SizedBox(height: 40.0),
@@ -85,13 +86,19 @@ class _OnboardState extends State<Onboard> {
                   curve: Curves.bounceIn);
             },
             child: Container(
-              decoration: BoxDecoration(color: Colors.red),
+              decoration: BoxDecoration(
+                  color: Colors.red, borderRadius: BorderRadius.circular(20)),
               height: 60.0,
               margin: EdgeInsets.all(40),
               width: double.infinity,
-              child: Text(
-                "Next",
-                style: TextStyle(color: Colors.white),
+              child: Center(
+                child: Text(
+                  currentIndex == contents.length - 1 ? "Start" : "Next",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
             ),
           )
